@@ -8,7 +8,7 @@ var themeColors = {
 }
 
 var customCommands = {
-    "codingSkills" : function(term) {
+    "codingskills" : function(term) {
         var divCount = 0;
         term.echo("type any skill from the list for its description", {
             finalize: function(div) {
@@ -33,7 +33,7 @@ var customCommands = {
             };
         };
     },
-    "otherSkills" : function(term) {
+    "otherskills" : function(term) {
         var divCount = 0;
         term.echo("type any skill from the list for its description", {
             finalize: function(div) {
@@ -83,7 +83,7 @@ var customCommands = {
             };
         };
     },
-    "webDev" : function(term) {
+    "webdev" : function(term) {
         var divCount = 0;
         term.echo("type any skill from the list for its description", {
             finalize: function(div) {
@@ -137,12 +137,12 @@ $(window).on('scroll',function(){
         $('#termi').terminal(function(command, term) {
             if (command !== '') {
                 try {
-                    if (command in customCommands){
-                        customCommands[command](term);
+                    if (command.toLowerCase().replace(/\s/g, '') in customCommands){
+                        customCommands[command.toLowerCase().replace(/\s/g, '')](term);
                     } else {
                         isSkill = false;
                         for (var n = 0; n < allSkills.length; n++) {
-                            if (command == allSkills[n].name) {
+                            if (command.toLowerCase().replace(/\s/g, '') == allSkills[n].name) {
                                 isSkill = allSkills[n].type;
                                 term.echo(allSkills[n].description, {
                                     finalize: function(div) {
@@ -222,22 +222,22 @@ $( "body" ).on('DOMSubtreeModified', "span", function() {
 
 var allSkills = [
     {
-        name : "Python",
+        name : "python",
         description : "Python is my language of choice when not working with web apps. I make games, AI bots, Desktop Softwares and a lot more cool stuffs like that using python",
         type : "coding"
     },
     {
-        name : "Javascript",
-        description : "Javascript is my favorite language most of the time, because objects are SO MUCH FUN! I can do almost everything in web development using that",
-        type : "coding"
+        name : "react",
+        description : "Reaact is my favorite frontend framework most of the time, because of the rendering speed! I can do almost everything in web development using that",
+        type : "webDev"
     },
     {
-        name : "Node",
+        name : "node",
         description : "I have experience with building RESTful backends with Node, as well as realtime amazon alexa apps. I made few Alexa bots to book a car or order food using node js.",
         type : "webDev"
     },
     {
-        name : "Java",
+        name : "java",
         description : "I use Java for both desktop and web apps. I used jsp, jsf along with spring mvc to make advanced Learning portal.",
         type : "coding"
     },

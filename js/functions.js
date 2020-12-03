@@ -162,8 +162,8 @@ $(document).ready(function(){
 ********************************************************/
 $(function(){
       $(".animated-intro").typed({
-        strings: ["I'm <b>Manank Valand</b>. Founder at <b>OrderOne</b>. <br> I design, develop and manage websites.",
-        		  "I'm <b>Programous.</b><br> I write programs for web/desktop softwares and Games.",
+        strings: ["I'm <b>Manank Valand</b>. Application Developer at ADP. <br> I design, develop and manage applications.",
+        		  "I'm <b>Programous.</b><br/> I write programs for web/mobile apps and Games.",
         		  "I'm also an <b>Analyst.</b> <br> I make dashboards and admin pages as well."], 			//just write what text you want to appear
         typeSpeed: 0,
         backSpeed: 0,
